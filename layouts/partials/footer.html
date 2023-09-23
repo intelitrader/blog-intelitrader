@@ -23,6 +23,10 @@
     {{ end }}
 </footer>
 
+{{ if or .Params.mermaid .Site.PArams.mermaid }}
+    {{ partial "mermaind.html"}}
+{{ end }}
+
 {{ range .Site.Params.customJS }}
     {{ if ( or ( hasPrefix . "http://" ) ( hasPrefix . "https://" ) ) }}
         <!-- remote js -->

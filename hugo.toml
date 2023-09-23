@@ -11,3 +11,4 @@ disqusShortname  = 'intelitrader-blog-sample-1'
         posts = '/artciles/'
 [params]
     enableComments = true
+    mermaid = true
