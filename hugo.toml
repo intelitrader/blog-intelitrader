@@ -1,4 +1,4 @@
-baseURL = 'https://blogdarkspot.github.io/sample-blog/'
+baseURL = 'https://blogdarkspot.github.io/sample-blog'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'mini'
