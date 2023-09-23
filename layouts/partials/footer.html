@@ -23,7 +23,7 @@
     {{ end }}
 </footer>
 
-{{ if or .Params.mermaid .Site.PArams.mermaid }}
+{{ if or .Params.mermaid .Site.Params.mermaid }}
     {{ partial "mermaind.html"}}
 {{ end }}
 
