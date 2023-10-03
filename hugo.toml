@@ -1,4 +1,4 @@
-baseURL = 'https://intelitrader.github.io'
+baseURL = 'https://blog.intelitrader.com.br'
 languageCode = 'en-us'
 title = 'Intelitrader Blog'
 
@@ -13,13 +13,8 @@ title = 'Intelitrader Blog'
     url = '/posts'
     weight = 2
 
-[[menu.main]]
-    name = 'Resume'
-    url = '/cv/'
-    weight = 3
-
 [Params]
-    subtitle = 'Tecnologia focada em mercado financeiro'
+    subtitle = 'subtitle'
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
