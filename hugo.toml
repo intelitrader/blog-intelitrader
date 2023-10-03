@@ -1,17 +1,25 @@
-baseURL = 'https://intelitrader.github.io/intelitrader'
+baseURL = 'https://intelitrader.github.io'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Intelitrader Blog'
 
-disqusShortname  = 'intelitrader-blog-sample-1'
+[menu]
+[[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+
+[[menu.main]]
+    name = 'Posts'
+    url = '/posts'
+    weight = 2
+
+[[menu.main]]
+    name = 'Resume'
+    url = '/cv/'
+    weight = 3
+
+[Params]
+    subtitle = 'Tecnologia focada em mercado financeiro'
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
-  
-[permalinks]
-    [permalinks.page]
-        posts = '/articles/:title/'
-    [permalinks.section]
-        posts = '/artciles/'
-[params]
-    enableComments = true
-    mermaid = true

@@ -1,44 +1,36 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-<meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
-{{ hugo.Generator }}
-{{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
-{{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-{{ else }}
-  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-{{ end }}
-
-<link rel="stylesheet" href="{{ $.Site.BaseURL }}/css/style.css">
-
-{{ range .Site.Params.customCSS }}
-  {{ if ( or ( hasPrefix . "http://" ) ( hasPrefix . "https://" ) ) }}
-    <!-- remote css -->
-    <link rel="stylesheet" href="{{ . }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="{{ .Site.Params.description }}"
+  />
+  {{ if (eq .Title .Site.Title) }}
+    {{ with $title := .Title }}
+      <title>{{ . }}</title>
+    {{ end }}
   {{ else }}
-    <!-- local css -->
-    <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    {{ with $title := printf "%s | %s" .Title .Site.Title }}
+      <title>{{ . }}</title>
+    {{ end }}
   {{ end }}
-{{ end }}
-
-<link rel="shortcut icon" href="{{ $.Site.BaseURL }}/images/favicon.ico" type="image/x-icon" />
-
-{{ if .Site.Params.enableGoogleAnalytics }} 
-  {{ template "_internal/google_analytics.html" . }}
-{{ end }}
-
-{{ if or .Params.math .Site.Params.math }}
-  {{ partial "math.html" . }}
-{{ end }}
-
-<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-<script src="https://tikzjax.com/v1/tikzjax.js"></script>
-
-
-{{ if .OutputFormats.Get "RSS" }}
-  {{ with .OutputFormats.Get "RSS" }}
-    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/reset.css"/>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/font.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/smigle.css"/>
+  {{ range .Site.Params.customStylesheets }}
+    <link rel="stylesheet" href="{{ . | relURL }}"/>
   {{ end }}
-{{ end }}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+  <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+</head>
