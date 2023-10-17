@@ -1,0 +1,37 @@
+:root {
+  --bgcolor: #fff;
+  --linkcolor: #fa7b3b;
+  --visitedcolor: #da5d1f;
+  --precolor: #fff;
+
+  --text-title: #333;
+  --text-subtitle: #4d4d4d;
+  --text-body: #eee;
+  --text-secondary: #fa7b3b;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+footer {
+  background-color: #333;
+  color: var(--text-body);
+  padding: 1rem;
+  text-align: center;
+}

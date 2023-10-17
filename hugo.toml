@@ -13,8 +13,13 @@ title = 'Intelitrader Blog'
     url = '/posts'
     weight = 2
 
+[[menu.main]]
+    name = 'Sobre'
+    url = 'https://www.intelitrader.com.br/pt/sobre.html'
+    weight = 3
+
 [Params]
-    subtitle = 'subtitle'
+    subtitle = 'Especialistas em soluções para corretoras, exchanges, bancos e assets.'
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
