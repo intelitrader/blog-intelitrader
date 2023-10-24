@@ -5,9 +5,9 @@
   </a>
   {{ partial "postMeta.html" . }}
   <div class="content">
-    <p>{{ .Summary }}</p>
+    <p class="summary-text">{{ .Summary }}</p>
     {{ if .Truncated }}
-      <a href="{{ .Permalink }}">Read more...</a>
+      <a href="{{ .Permalink }}">Read more...</a> 
     {{ end }}
   </div>
 </article>

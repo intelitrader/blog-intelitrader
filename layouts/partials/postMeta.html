@@ -32,7 +32,7 @@
 {{ end }}
 
 <div class="post-meta">
-  <strong>
+  <div>
     <span>Posted on</span>
     <time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
     {{ with .Params.categories }}<span>in</span>{{ end }}
@@ -40,9 +40,11 @@
       {{- if $key }}, {{ end }}
       <a href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
     {{- end }}
-  </strong>
- {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }}
- {{ with .ReadingTime}}<span> • {{ $duration }} minute read</span>{{ end }}
+  </div>
+ <div>
+   {{ with .WordCount }}<span>{{ . }} words</span>{{ end }}
+   {{ with .ReadingTime}}<span> • {{ $duration }} minute read</span>{{ end }}
+ </div>
   {{ with .Params.tags }}
     <div>
       <span>Tags:</span>
